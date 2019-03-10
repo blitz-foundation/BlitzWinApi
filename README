@@ -1,101 +1,61 @@
-BlitzWinApi - враппер апи функций для облегчения работы с этими самыми функциями. С помощью него вы сможете воспользоваться WinApi из blitz3d и blitzplus.
-Текущая версия: 0.50
+BlitzWinApi is a wrapper api function to facilitate working with these same functions. With it, you can use WinApi from blitz3d and blitzplus.
+Current version: 0.50
 
-Условия распространения. Враппер распространяется свободно. Вы можете использовать его как некоммерческих так и [b]коммерческих[/b] проектах.  Единсвенным обязательным условием это указание названия библиотеки и имя автора. Так же в случае использования в [b]коммерческом[/b] проекте нужно согласовать это со мной (денег не попрошу). Если проект соответсвует моим моральным убеждениям то проблем быть не должно. Проще говоря если в проекте нет намека на рассовую, половую и иную дескримнацию, если проект не содержит откровенных эротических сцен, издевательств в грубой форме, не является рекламой какого-нибудь политического деятеля, то все будет ок :)
+Terms of distribution. Wrapper is distributed freely. You can use it as a non-commercial and [b] commercial [/ b] projects. The only prerequisite is the indication of the name of the library and the name of the author. Also, if used in a [b] commercial [/ b] project, you need to coordinate this with me (I won’t ask for money). If the project complies with my moral beliefs, then there should be no problems. Simply put, if the project does not have a hint of racial, sexual and other descrimnation, if the project does not contain explicit erotic scenes, bullying in a rude form, is not an advertisement of a politician, then everything will be ok :)
 
-Комманды:
+Commands:
 
-- работа с окнами
-hWnd - идентификатор окна если равен 0 то равен стартовому окну программы;
+- work with windows
+hWnd - window identifier if 0 then it is equal to the start window of the program;
 
-bGetActiveWindow () - возврщает дескриптор (идентификатор) активного окна;
-bSetActiveWindow (hWnd%=0) активирует окно hWnd.
-bWindowFromPoint (x%,y%) - возврщает дескриптор (идентификатор) окна находящегося под указаной точкой
-bFindWindow (caption$) - возвращает дескриптор окна имеющее заголовок равный caption. 0 если окно не найдено
-bGetDesktop () - возврщает дескриптор (идентификатор) рабочего стола;
-bDragAcceptFiles  (hWnd%=0) - активировать прием окном фаилов методом drag&drop 
-bHideWindow (hWnd%=0) - делает невидимым окно
-bShowWindow (hWnd%=0) - делает видимым невидимое окно и активирует его.
-bFlashWindow (time, hWnd%=0) - вызывает мерцание заголовка окна. time - промежуток между подсветкой. 
-bSetWindowAlpha (alpha, hWnd%=0) - устанавливает прозрачность окна alpha изменяется от 0 до 255 (0 окно полностью прозрано, 255 окно полностью непрозрачно)
-bFreeWindowAlpha (hWnd%=0) - убирает прозрачность окна
-bDisableExitButton (hWnd%=0) - отключает кнопку закрыть на окне и убирает опцию закрыть в меню заголовка
-bWindowIsActive (hWnd%=0) - возвращает 1 если окно hWnd активно и 0 если это не так.
-bGetWindowX (hWnd%=0) - возвращает X координату окна
-bGetWindowY (hWnd%=0) - возвращает Y координату окна
-bGetWindowRight (hWnd%=0) - возвращает X координату правой стороны окна
-bGetWindowBottom (hWnd%=0) -  возвращает Y координату нижней стороны окна
-bGetWindowWidth (hWnd%=0) - возвращает ширину окна
-bGetWindowHeight (hWnd%=0) - возвращает высоту окна
-bScreenWidth () - возвращает текущую ширину дисплея
-bScreenHeight() - возвращает текущую высоту дисплея
-bCreateRectRegion (l%, t%, r%, b%) - создает прямоугольный регион l, t, r, b - координаты левой, верхней, правой и нижней границ региона соответсвенно, возвращает хэндл региона
-bSetWindowRegion (region%, hwnd%) - задает видимый прямоугольный регион окна возвращает 0 в случае ошибки и 1 в случае успешного выполнения
+bGetActiveWindow () - returns the descriptor (identifier) ​​of the active window;
+bSetActiveWindow (hWnd% = 0) activates the hWnd window.
+bWindowFromPoint (x%, y%) - returns the window handle (identifier) ​​under the specified point
+bFindWindow (caption $) - returns a window handle with a caption equal to the caption. 0 if the window is not found
+bGetDesktop () - returns the descriptor (identifier) ​​of the desktop;
+bDragAcceptFiles (hWnd% = 0) - activate drag and drop window receiving of files
+bHideWindow (hWnd% = 0) - makes the window invisible
+bShowWindow (hWnd% = 0) - makes an invisible window visible and activates it.
+bFlashWindow (time, hWnd% = 0) - causes the window title to flicker. time - the interval between the backlight.
+bSetWindowAlpha (alpha, hWnd% = 0) - sets the transparency of the alpha window varies from 0 to 255 (0 window is completely transparent, 255 window is completely opaque)
+bFreeWindowAlpha (hWnd% = 0) - removes window transparency
+bDisableExitButton (hWnd% = 0) - disables the close button on the window and clears the close option in the header menu
+bWindowIsActive (hWnd% = 0) - returns 1 if the hWnd window is active and 0 if it is not.
+bGetWindowX (hWnd% = 0) - returns the X coordinate of the window
+bGetWindowY (hWnd% = 0) - returns the Y coordinate of the window
+bGetWindowRight (hWnd% = 0) - returns the X coordinate of the right side of the window
+bGetWindowBottom (hWnd% = 0) - returns the Y coordinate of the bottom side of the window
+bGetWindowWidth (hWnd% = 0) - returns the width of the window
+bGetWindowHeight (hWnd% = 0) - returns the height of the window
+bScreenWidth () - returns the current display width
+bScreenHeight () - returns the current display height
+bCreateRectRegion (l%, t%, r%, b%) - creates a rectangular region l, t, r, b - coordinates of the left, upper, right and lower borders of the region, respectively, returns the handle of the region
+bSetWindowRegion (region%, hwnd%) - sets the visible rectangular region of the window to return 0 if an error occurs and 1 if successful
 
-- мышь
-bGlobalMouseX () - возвращает глобальную X координату мыши
-bGlobalMouseY () - возвращает глобальную Y координату мыши
-bSetMousePos (x%, y%) - устанавливает новую позицию мыши
-bSwapMouseButton (swap) - меняет местами кнопки мыши (1-правая кнопка становится левой, 0-наоборот). Функция меняет кнопки во всех программах поэтому не забываем по окончании работы вызвать bSwapMouseButton (0)
-bSetPointer (pointer, hWnd=0) - меняет указатель мыши. pointer принимает значение одной из констант: POINTER_APPSTARTING, POINTER_ARROW, POINTER_CROSS, POINTER_IBEAM, POINTER_NO, POINTER_SIZEALL, POINTER_SIZENESW, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEWE, POINTER_UPARROW,
+- mouse
+bGlobalMouseX () - returns the global X coordinate of the mouse
+bGlobalMouseY () - returns the global Y coordinate of the mouse
+bSetMousePos (x%, y%) - sets the new position of the mouse
+bSwapMouseButton (swap) - swaps mouse buttons (the 1-right button becomes the left, 0 is the opposite). The function changes the buttons in all programs, so we don’t forget to call bSwapMouseButton (0) at the end of the work.
+bSetPointer (pointer, hWnd = 0) - changes the mouse pointer. pointer takes the value of one of the following constants: POINTER_APPSTARTING, POINTER_ARROW, POINTER_CROSS, POINTER_IBEAM, POINTER_NO, POINTER_SIZEALL, POINTER_SIZENESW, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEWE, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEWE, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEWE, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEWALL, POINTER_SIZENS, POINTER_SIZENWSE, POINTER_SIZEALL, POINTER_SIZENS, POINTER_SIZENWSE
 POINTER_WAIT.
-bSetImagePointer (image$, hWnd=0) - Меняет указатель мыши на картинку из фаила форматов "*.cur" и "*.ani"(анимированные) image - полный путь к картинке.
+bSetImagePointer (image $, hWnd = 0) - Changes the mouse pointer over the image from the file "* .cur" and "* .ani" (animated) image - the full path to the image.
 
-- система
-bGetComputerName$ () - возвращает имя компьютера
-bGetUserName$ () - возвращает имя активного пользователя
-bRAMTotal() - объем оперативной памяти
-bRAMAvail() - доступный объем оперативной памяти
-bRAMUsage() - процент ипользования оперативной памяти
-bPageTotal() - объем файла подкачки
-bPageAvail() - доступный файла подкачки
-bVirtualTotal() - объем виртуальной памяти
-bVirtualAvail() - доступный объем виртуальной памяти
-bShell (path$, cmd$, show%, hWnd) - расширенный аналог ExexFile () path - путь к файлу (если указать неисполняемы фйл то будет открыто приложение по умолчанию для данного фйла), cmd - дополнительные параметры, show - принимает значение одной из констант: SW_HIDE (Не отображать окно), SW_SHOWMAXIMIZED (Отобразить и развернуть на весь экран), SW_SHOWMINIMIZED (Отобразить и свернуть), SW_SHOWMINNOACTIVE (Отобразить, минимизировать и не передавать фокус), SW_SHOWNOACTIVATE (Отобразить и не передавать фокус) SW_SHOWNORMAL (Отобразить и передать фокус)
+- system
+bGetComputerName $ () - returns the name of the computer
+bGetUserName $ () - returns the name of the active user
+bRAMTotal () - the amount of RAM
+bRAMAvail () - the available amount of RAM
+bRAMUsage () is the percentage of RAM usage
+bPageTotal () - paging file size
+bPageAvail () - available paging file
+bVirtualTotal () - the amount of virtual memory
+bVirtualAvail () - the available amount of virtual memory
+bShell (path $, cmd $, show%, hWnd) - extended analog ExexFile () path - file path (if you specify a non-executable file, the application will open by default for this file), cmd - additional parameters, show - takes the value of one of the constants: SW_HIDE (Do not display the window), SW_SHOWMAXIMIZED (Display and maximize the display), SW_SHOWMINIMIZED (Display and minimize), SW_SHOWMINNOACTIVE (Display, minimize and not transfer the focus), SW_SHOWNOACTIVATE (view, apply, and make it out of a view; pass the focus)
 
--буфер
-bGetClipboardText$ (buffer = 1024, hWnd%=0) - взять текст из буфера обмена windows buffer - длина текста
-bSetClipboardText$ (txt$,hWnd%=0) - поместить текст в буфер обмена windows
+-buffer
+bGetClipboardText $ (buffer = 1024, hWnd% = 0) - take text from clipboard windows buffer - text length
+bSetClipboardText $ (txt $, hWnd% = 0) - put text into windows clipboard
 
-- диалоговые окна
-bRequestColor(r=0, g=0, b=0, hWnd%=0) - вызвать дилоговое окно выбора цвета. Используйте bRequestRed (), bRequestGreen (), bRequestBlue () для получения значения цветов, r,g,b - цвет с которого начнется выбор.
-bRequestRed () - возвращает красную составляющую цвета. Вызывается после функции bRequestColor()
-bRequestGreen () - возвращает зеленую составляющую цвета. Вызывается после функции bRequestColor()
-bRequestBlue () - возвращает синию составляющую цвета. Вызывается после функции bRequestColor()
-bRequestFont(hWnd%=0) - вызвать дилоговое окно выбора шрифта. Загружает шрифт и возвращает его хэндл.
-bRequestFile$(filter$="All (*.*)|*.*", save=0, hWnd%=0) - вызвать дилоговое окно открыть(сохранить) фаил. filter$ - маска фаилов, save - если равен 1 то будет показан дилог "сохранить как" иначе "открыть"
-bMessageBox (message$,caption$,flag=MB_OK,hWnd=0) Показыает окно сообщения окна hWnd. message - текст сообщения, caption - заголовок сообщения, flag - тип окна сообщения (может принимать значение одной из констант MB_OK, MB_OKCANCEL, MB_YESNO, MB_YESNOCANCEL, MB_RETRYCANCEL, MB_ABORTRETRYIGNORE). Возвращает одно из значений констант : IDOK, IDCANCEL, IDABORT, IDRETRY, IDIGNORE, IDYES, IDNO.
-
-- ини
-bIniSetValue(section$, key$, value$, ini$="") - Записывает значение в ини файл. section - секция, key - имя значения, value - значение, ini - полное имя ини фала по-умолчанию равен BWA_INI_FILENAME$ = CurrentDir()+"BlitzWinApi.ini" 
-bIniGetValue$(section$, key$, default_value$=0, ini$="") - возвращает значение секции section и ключа key ини файла default_value - значение по умолчанию в случае отсутствия ини фаила и(или) секции и(или) ключа
-
-- реестр
-bRegSetValue(root, subkey$, key$,value$) -  Записывает значение в реестр. root принимает значение одной из контсант: HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, HKEY_DYN_DATA
-subkey - имя ветки, key - имя значения, value - значение
-bRegGetValue$(root, subkey$, key$) - возвращает значение узаного ключа реестра.
-bRegDeleteKey(root, subkey$) - удаляет ключ реестра, subkey - ключ
-bRegDeleteValue(root, subkey$, key$) - удаляет значение из реестра, subkey - ключ, key - значение.
-
-- действия
-bWaitDrop$ (wait=10) - ожидание фаила. Возвращает имя брошеного фаила wait - количество запросов
-bWaitEvent() - ожидает сообщения окна. Программа останавливается если нет никакого действия над окном. Функция возвращает сообщение принятое окном.
-А также дает возможность прочитать дополнительные параметры wParam и lParam с помощью функций bGetEventWParam () и bGetEventLParam ()
-bGetEvent(hwnd = 0) - Тоже самое что и bWaitEvent() отличие в том что программа продолжает выполнение даже если не принято никакого сообщения. А также дает возможность прочитать дополнительные параметры wParam и lParam с помощью функций bGetEventWParam () и bGetEventLParam ()
-bGetEventWParam () - возвращает значение wParam. Вызывается после функции bGetEvent() или bWaitEvent()
-bGetEventLParam () - возвращает значение lParam. Вызывается после функции bGetEvent() или bWaitEvent()
-bSendMessage (hwnd, message%, wParam=0, lParam=0) - отправляет окну hwnd сообщение message. Вернет 1 если все прошло успешно и 0 ели что то не так. wParam и lParam - дополнительные параметры. Используйте bGetEventWParam () и bGetEventLParam () для получения значения этих параметров после вызова функции bGetEvent()
-
-- меню
-bCreatePopupMenu () - создает всплывающее меню и возвращает его хэндл
-bRequestPopupMenu (menu, hwnd=0) - вызывает всплывающее меню. menu - хэндл меню. Возвращает id выбранного пункта
-bDestroyMenu (menu) - удаляет меню из памяти
-bAddMenuItem (menu,id,name$, class=MF_ENABLED) - добавляет пункт в меню. menu - хэндл меню, id - индетификатор пункта, name - имя пункта (то что будет отбражатся в меню), class - тип пункта, используйте MF_SEPARATOR для создания разделителя. Возвращает id пункта.
-bAddPopupItem (menu,name$) - добавляет пункт со всплывающим меню. Возвращает хэндл пункта
-bEnableMenuItem (menu,id) - включает выключенный пункт меню
-bDisableMenuItem (menu,id) - выключает пункт меню
-bCheckMenuItem (menu,id) - делает выбранным пункт меню. проверить статус пункта можно с помощью функции bGetMenuItemState (menu,id)
-bUncheckMenuItem (menu,id) - делает невыбранным пункт меню
-bGetMenuItemState (menu,id) - возвращает одну из констант состояния пункта:  MF_ENABLED, MF_DISABLED, MF_UNCHECKED, MF_CHECKED
-
-Некоторые функции остались внутренними и я их не документировал. 
+- dialog boxes
+bRequestColor (r = 0, g = 0, b = 0, hWnd% = 0) - call the dialog box for choosing the color. Use bRequestRed (), bRequestGreen (), bRequestBlue () for the semi
